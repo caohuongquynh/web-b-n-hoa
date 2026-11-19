@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fleur — Hoa Tươi Cao Cấp | Shop Hoa Online</title>
+  <meta name="description"
+    content="Fleur - Shop hoa tươi cao cấp. Hoa nhập khẩu chất lượng, giao hàng nhanh, thiết kế tinh tế cho mọi dịp đặc biệt." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span class="toast-msg">Thành công!</span>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-mark">
+            <img src="https://ibrand.vn/wp-content/uploads/2022/10/Logo-shop-hoa-7.png" alt="Hoa tươi Willow Lea" />
+          </div>
+          <span class="logo-text">Willow Lea</span>
+        </a>
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link active">Trang chủ</a>
+          <a href="products.html" class="nav-link">Hoa tươi</a>
+          <a href="products.html?q=best" class="nav-link">Best Seller</a>
+          <a href="products.html" class="nav-link">Dịp đặc biệt</a>
+          <a href="about.html" class="nav-link">Về chúng tôi</a>
+        </nav>
+        <div class="header-actions">
+          <form class="search-wrap" onsubmit="doSearch(event)">
+            <i class="fas fa-search"></i>
+            <input type="text" id="headerSearch" placeholder="Tìm hoa..." autocomplete="off" />
+          </form>
+          <a href="cart.html" class="cart-btn">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count">0</span>
+          </a>
+          <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html">🏠 Trang chủ</a>
+    <a href="products.html">🌸 Hoa tươi</a>
+    <a href="products.html?q=best">⭐ Best Seller</a>
+    <a href="products.html">💝 Dịp đặc biệt</a>
+    <a href="about.html">💛 Về chúng tôi</a>
+    <a href="cart.html">🛒 Giỏ hàng</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-blob hero-blob-1"></div>
+      <div class="hero-blob hero-blob-2"></div>
+    </div>
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-tag">🌸 Hoa tươi nhập khẩu cao cấp</div>
+          <h1 class="hero-title">Tươi <em>Đẹp</em><br>Mọi Khoảnh<br>Khắc</h1>
+          <p class="hero-sub">Gửi trao yêu thương qua từng cánh hoa. Chúng tôi mang đến những bó hoa tinh tế nhất cho
+            những dịp đặc biệt của bạn.</p>
+          <div class="hero-btns">
+            <a href="products.html" class="btn btn-primary"><i class="fas fa-shopping-bag"></i> Mua ngay</a>
+            <a href="products.html" class="btn btn-outline">Khám phá bộ sưu tập</a>
+          </div>
+          <div class="hero-stats">
+            <div><span class="hero-stat-num">5000+</span><span class="hero-stat-label">Khách hàng hài lòng</span></div>
+            <div><span class="hero-stat-num">200+</span><span class="hero-stat-label">Loài hoa độc đáo</span></div>
+            <div><span class="hero-stat-num">50+</span><span class="hero-stat-label">Sự kiện phục vụ</span></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-img-wrap">
+            <img src="https://ibrand.vn/wp-content/uploads/2022/10/Logo-shop-hoa-7.png" alt="Hoa tươi Fleur"
+              class="hero-img-fill" onerror="this.style.display='none'" />
+          </div>
+          <div class="hero-badge hero-badge-1">
+            <span class="hero-badge-icon">🚚</span>
+            <div>
+              <span class="hero-badge-title">Giao hàng nhanh</span>
+              <span class="hero-badge-sub">Trong 2-4 giờ</span>
+            </div>
+          </div>
+          <div class="hero-badge hero-badge-2">
+            <span class="hero-badge-icon">⭐</span>
+            <div>
+              <span class="hero-badge-title">Đánh giá 4.9/5</span>
+              <span class="hero-badge-sub">5000+ reviews</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="categories">
+    <div class="container">
+      <div class="text-center" data-aos>
+        <div class="section-tag">Danh mục</div>
+        <h2 class="section-title">Khám Phá Theo Loài Hoa</h2>
+      </div>
+      <div class="categories-grid mt-40">
+        <a href="products.html" class="cat-card" data-aos data-aos-delay="0">
+          <img class="cat-img"
+            src="https://linhflower.com/wp-content/uploads/2025/08/462101391_1208234387550896_1053205211719235731_n.jpg.jpg"
+            alt="Hoa Hồng" />
+          <div class="cat-overlay"></div>
+          <div class="cat-info"><span class="cat-name">Hoa Hồng</span><span class="cat-count">24 sản phẩm</span></div>
+        </a>
+        <a href="products.html" class="cat-card" data-aos data-aos-delay="80">
+          <img class="cat-img" src="https://hoatuoihoamy.com/wp-content/uploads/2025/03/18-2.jpg" alt="Tulip" />
+          <div class="cat-overlay"></div>
+          <div class="cat-info"><span class="cat-name">Tulip</span><span class="cat-count">18 sản phẩm</span></div>
+        </a>
+        <a href="products.html" class="cat-card" data-aos data-aos-delay="160">
+          <img class="cat-img"
+            src="https://hoatuoiangel.com/upload/elfinder/z6223592962627_35723dd22a8beaa6c9881f6ef1bc6795.jpg"
+            alt="Hướng Dương" />
+          <div class="cat-overlay"></div>
+          <div class="cat-info"><span class="cat-name">Hướng Dương</span><span class="cat-count">12 sản phẩm</span>
+          </div>
+        </a>
+        <a href="products.html" class="cat-card" data-aos data-aos-delay="240">
+          <img class="cat-img"
+            src="https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=400&h=530&q=80"
+            alt="Hoa Anh Đào" />
+          <div class="cat-overlay"></div>
+          <div class="cat-info"><span class="cat-name">Hoa Anh Đào</span><span class="cat-count">8 sản phẩm</span></div>
+        </a>
+        <a href="products.html" class="cat-card" data-aos data-aos-delay="320">
+          <img class="cat-img"
+            src="https://bizweb.dktcdn.net/thumb/1024x1024/100/004/714/products/loi-ich-dinh-duong-cua-hoa-an-duoc.jpg?v=1742349729417"
+            alt="Hoa Hỗn Hợp" />
+          <div class="cat-overlay"></div>
+          <div class="cat-info"><span class="cat-name">Hoa Hỗn Hợp</span><span class="cat-count">36 sản phẩm</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS -->
+  <section class="section-pb">
+    <div class="container">
+      <div class="section-hdr" data-aos>
+        <div>
+          <div class="section-tag">Nổi bật</div>
+          <h2 class="section-title">Sản Phẩm Bán Chạy</h2>
+        </div>
+        <a href="products.html" class="btn btn-outline btn-mb">Xem tất cả <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="products-grid" id="featuredGrid"></div>
+    </div>
+  </section>
+
+  <!-- FEATURED BANNER -->
+  <section class="section-pb">
+    <div class="container">
+      <div class="featured-wrap" data-aos>
+        <div class="featured-content">
+          <div class="section-tag">Bộ sưu tập đặc biệt</div>
+          <h2 class="featured-title">Hộp Hồng Vườn<br><em>Sang Trọng</em></h2>
+          <p class="featured-desc">Hộp hoa hồng cao cấp với 30 bông đa màu trong hộp gỗ handmade. Món quà hoàn hảo cho
+            những dịp đặc biệt nhất.</p>
+          <div class="hero-btns">
+            <a href="product-detail.html?id=12" class="btn btn-primary"><i class="fas fa-shopping-bag"></i> Mua ngay</a>
+            <a href="products.html" class="btn btn-outline">Xem thêm</a>
+          </div>
+        </div>
+        <div class="featured-img">
+          <img
+            src="https://thanhnien.mediacdn.vn/uploaded/nuvuong/2021_06_25/z2574908364577_b3abee090fc548f50da675f62bc3af74_TPFO.jpg?width=500"
+            alt="Hộp Hồng Vườn Sang Trọng" class="featured-img-photo" onerror="this.style.display='none'" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section-pb">
+    <div class="container">
+      <div class="text-center" data-aos>
+        <div class="section-tag">Dịch vụ</div>
+        <h2 class="section-title">Tại Sao Chọn Fleur?</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" data-aos data-aos-delay="0">
+          <span class="service-icon">🚚</span>
+          <h4 class="service-title">Giao hàng nhanh</h4>
+          <p class="service-desc">Chúng tôi giao hoa trong vòng 2-4 giờ, đảm bảo hoa tươi nhất khi đến tay bạn.</p>
+        </div>
+        <div class="service-card" data-aos data-aos-delay="100">
+          <span class="service-icon">🌸</span>
+          <h4 class="service-title">Hoa tươi 100%</h4>
+          <p class="service-desc">Hoa được tuyển chọn kỹ từ những nông trại hữu cơ uy tín, đảm bảo chất lượng tốt nhất.
+          </p>
+        </div>
+        <div class="service-card" data-aos data-aos-delay="200">
+          <span class="service-icon">↩️</span>
+          <h4 class="service-title">Đổi trả dễ dàng</h4>
+          <p class="service-desc">Không hài lòng? Chúng tôi hoàn tiền hoặc đổi hoa miễn phí.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="text-center" data-aos>
+        <div class="section-tag">Đánh giá</div>
+        <h2 class="section-title">Khách Hàng Nói Gì?</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card" data-aos data-aos-delay="0">
+          <div class="stars stars-mb16"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="testimonial-text">"Hoa tươi và đẹp hơn cả ảnh! Giao hàng đúng giờ, đóng gói cẩn thận. Bạn tôi rất
+            thích bó hoa hồng đỏ nhận được."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">👩</div>
+            <div><span class="testimonial-name">Nguyễn Thị Lan</span><span class="testimonial-role">Khách hàng thân
+                thiết</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card" data-aos data-aos-delay="100">
+          <div class="stars stars-mb16"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="testimonial-text">"Đặt hoa cưới tại Fleur — tuyệt vời! Họ tư vấn tận tình và thực hiện đúng theo ý
+            tưởng của mình. Hoa đẹp mê hồn!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">👰</div>
+            <div><span class="testimonial-name">Trần Bảo Châu</span><span class="testimonial-role">Cô dâu tháng
+                3/2024</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card" data-aos data-aos-delay="200">
+          <div class="stars stars-mb16"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+          <p class="testimonial-text">"Mua hoa lan hồ điệp tặng sếp, ai cũng khen đẹp và sang. Chất lượng hoa rất tốt,
+            sống lâu hơn tôi nghĩ. Sẽ quay lại!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">👨</div>
+            <div><span class="testimonial-name">Phạm Minh Tuấn</span><span class="testimonial-role">Khách hàng doanh
+                nghiệp</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="container newsletter-z">
+      <div class="section-tag section-tag-nl"><span class="nl-badge">Newsletter</span></div>
+      <h2>Nhận Ưu Đãi Đặc Biệt 🌸</h2>
+      <p>Đăng ký ngay để nhận voucher 15% cho đơn hàng đầu tiên và cập nhật bộ sưu tập hoa mới nhất.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Nhập email của bạn..." />
+        <button type="button" class="btn" onclick="showToast('🎉 Đăng ký thành công! Kiểm tra email của bạn.')">Đăng
+          ký</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo logo">
+            <div class="logo-mark">🌸</div><span class="logo-text">Fl<span>eu</span>r</span>
+          </div>
+          <p class="footer-desc">Chúng tôi mang đến những bó hoa tươi đẹp nhất, giao tận tay với tình yêu và sự tận tâm.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Sản Phẩm</h4>
+          <ul class="footer-links">
+            <li><a href="products.html">Hoa hồng</a></li>
+            <li><a href="products.html">Hoa tulip</a></li>
+            <li><a href="products.html">Hoa lan</a></li>
+            <li><a href="products.html">Hoa hỗn hợp</a></li>
+            <li><a href="products.html">Hoa theo dịp</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Hỗ Trợ</h4>
+          <ul class="footer-links">
+            <li><a href="#">Hướng dẫn đặt hàng</a></li>
+            <li><a href="#">Chính sách giao hàng</a></li>
+            <li><a href="#">Đổi trả &amp; hoàn tiền</a></li>
+            <li><a href="#">Chăm sóc hoa tại nhà</a></li>
+            <li><a href="about.html">Về chúng tôi</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Liên Hệ</h4>
+          <div class="footer-contact">
+            <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>123 Đường Hoa Hồng, Quận 1,
+                TP.HCM</span></div>
+            <div class="footer-contact-item"><i class="fas fa-phone"></i><span>0909 888 999</span></div>
+            <div class="footer-contact-item"><i class="fas fa-envelope"></i><span><a href="/cdn-cgi/l/email-protection"
+                  class="__cf_email__" data-cfemail="4c24292020230c2a2029393e623a22">[email&#160;protected]</a></span>
+            </div>
+            <div class="footer-contact-item"><i class="fas fa-clock"></i><span>7:00 - 21:00 mỗi ngày</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 Fleur. Tất cả quyền được bảo lưu.</span>
+        <div class="footer-bottom-row"><span>🌸 Made with love in Vietnam</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="app.js"></script>
+  <script>
+    function doSearch(e) {
+      e.preventDefault();
+      const q = document.getElementById('headerSearch').value.trim();
+      if (q) window.location.href = 'products.html?q=' + encodeURIComponent(q);
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('featuredGrid');
+      if (!grid) return;
+      const featured = PRODUCTS.filter(p => p.badge).slice(0, 8);
+      grid.innerHTML = featured.map(p => {
+        const wished = isWished(p.id);
+        const badge = p.badge ? `<span class="product-badge badge-${p.badge}">${p.badge === 'new' ? 'Mới' : p.badge === 'sale' ? 'Sale' : 'Best'}</span>` : '';
+        return `
+        <article class="product-card" data-aos data-aos-delay="${featured.indexOf(p) * 80}">
+          <div class="product-img-wrap">
+            ${badge}
+            <button class="product-wish ${wished ? 'liked' : ''}" onclick="toggleWishHome(${p.id},this)"><i class="${wished ? 'fas' : 'far'} fa-heart"></i></button>
+            <div class="product-img-inner">${renderProductImg(p.images[0], p.name)}</div>
+            <div class="product-quick">
+              <a href="product-detail.html?id=${p.id}" class="btn btn-ghost btn-quick"><i class="far fa-eye"></i> Xem</a>
+              <button class="btn btn-primary btn-quick" onclick="addToCart(${p.id})"><i class="fas fa-shopping-bag"></i> Thêm</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">${p.category}</div>
+            <h3 class="product-name"><a href="product-detail.html?id=${p.id}">${p.name}</a></h3>
+            <div class="stars">${renderStars(p.rating)}<span>(${p.reviews})</span></div>
+            <div class="product-footer">
+              <div>
+                <span class="product-price">${formatPrice(p.price)}</span>
+                ${p.oldPrice ? `<span class="product-price-old">${formatPrice(p.oldPrice)}</span>` : ''}
+              </div>
+              <button class="add-cart-btn" onclick="addToCart(${p.id})"><i class="fas fa-plus"></i></button>
+            </div>
+          </div>
+        </article>`;
+      }).join('');
+      initAOS();
+    });
+    function toggleWishHome(id, btn) {
+      const liked = toggleWish(id);
+      btn.classList
+    }

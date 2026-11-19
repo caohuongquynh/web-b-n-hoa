@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giỏ Hàng — Fleur</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<div class="toast" id="toast">
+  <i class="fas fa-check-circle"></i>
+  <span class="toast-msg">Thành công!</span>
+</div>
+
+<!-- HEADER -->
+<header class="site-header scrolled" id="siteHeader">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">🌸</div>
+        <span class="logo-text">Fl<span>eu</span>r</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Trang chủ</a>
+        <a href="products.html" class="nav-link">Hoa tươi</a>
+        <a href="about.html" class="nav-link">Về chúng tôi</a>
+        <a href="cart.html" class="nav-link active">Giỏ hàng</a>
+      </nav>
+      <div class="header-actions">
+        <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-bag"></i><span class="cart-count" style="display:none">0</span></a>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html">🏠 Trang chủ</a>
+  <a href="products.html">🌸 Hoa tươi</a>
+  <a href="cart.html">🛒 Giỏ hàng</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="breadcrumb">
+      <a href="index.html">Trang chủ</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Giỏ hàng</span>
+    </div>
+    <h1 class="section-title">Giỏ Hàng Của Bạn</h1>
+  </div>
+</div>
+
+<!-- CART CONTENT -->
+<section style="padding:60px 0 100px;">
+  <div class="container">
+
+    <!-- EMPTY CART -->
+    <div class="empty-cart" id="emptyCart" style="display:none;">
+      <i class="fas fa-shopping-bag"></i>
+      <h3>Giỏ hàng trống</h3>
+      <p>Bạn chưa có sản phẩm nào trong giỏ hàng. Hãy khám phá bộ sưu tập hoa của chúng tôi!</p>
+      <a href="products.html" class="btn btn-primary">
+        <i class="fas fa-flower"></i> Khám phá ngay
+      </a>
+    </div>
+
+    <div class="cart-layout" id="cartTableWrap" style="display:none;">
+
+      <!-- Cart Table -->
+      <div>
+        <div class="cart-table">
+          <div class="cart-table-head">
+            <span>Sản phẩm</span>
+            <span>Đơn giá</span>
+            <span>Số lượng</span>
+            <span>Tổng</span>
+            <span></span>
+          </div>
+          <div id="cartItems">
+          </div>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:20px;flex-wrap:wrap;gap:12px;">
+          <a href="products.html" class="btn btn-outline">
+            <i class="fas fa-arrow-left"></i> Tiếp tục mua
+          </a>
+          <button class="btn btn-ghost" id="clearCart" style="color:var(--pink);">
+            <i class="fas fa-trash"></i> Xóa giỏ hàng
+          </button>
+        </div>
+      </div>
+
+      <!-- Cart Summary -->
+      <div id="cartSummaryWrap" style="display:none;">
+        <div class="cart-summary">
+          <h3 class="summary-title">Tóm Tắt Đơn Hàng</h3>
+
+          <div class="summary-row">
+            <span>Tạm tính</span>
+            <span id="summarySubtotal">0đ</span>
+          </div>
+          <div class="summary-row">
+            <span>Giảm giá</span>
+            <span id="summaryDiscount" style="color:var(--mint);">Chưa áp dụng</span>
+          </div>
+          <div class="summary-row">
+            <span>Phí vận chuyển</span>
+            <span id="summaryShipping">30,000đ</span>
+          </div>
+          <div class="summary-row total">
+            <span>Tổng cộng</span>
+            <span id="summaryTotal">0đ</span>
+          </div>
+
+          <!-- Coupon -->
+          <div class="coupon-wrap">
+            <input type="text" id="couponInput" placeholder="Mã giảm giá..." />
+            <button class="btn btn-primary" id="couponApply" style="padding:10px 16px;font-size:0.82rem;">Áp dụng</button>
+          </div>
+          <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:20px;">
+            💡 Thử: FLEUR10, LOVE20, BLOOM15
+          </div>
+
+          <button class="btn btn-primary" id="checkoutBtn" style="width:100%;justify-content:center;padding:16px;">
+            <i class="fas fa-lock"></i> Đặt hàng ngay
+          </button>
+
+          <div style="display:flex;justify-content:center;gap:16px;margin-top:20px;">
+            <i class="fab fa-cc-visa" style="font-size:1.8rem;color:var(--text-muted);"></i>
+            <i class="fab fa-cc-mastercard" style="font-size:1.8rem;color:var(--text-muted);"></i>
+            <i class="fab fa-cc-paypal" style="font-size:1.8rem;color:var(--text-muted);"></i>
+          </div>
+
+          <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--border);">
+            <div style="display:flex;align-items:center;gap:8px;font-size:0.82rem;color:var(--text-muted);margin-bottom:8px;">
+              <i class="fas fa-shield-alt" style="color:var(--mint);"></i>
+              Thanh toán bảo mật 100%
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:0.82rem;color:var(--text-muted);">
+              <i class="fas fa-truck" style="color:var(--mint);"></i>
+              Giao hàng trong 2-4 giờ
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECOMMENDED -->
+<section style="padding:0 0 100px;">
+  <div class="container">
+    <div style="margin-bottom:40px;">
+      <div class="section-tag">Gợi ý</div>
+      <h2 class="section-title">Có Thể Bạn Thích</h2>
+    </div>
+    <div class="products-grid" id="recommendedGrid">
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo logo">
+          <div class="logo-mark">🌸</div>
+          <span class="logo-text">Fl<span>eu</span>r</span>
+        </div>
+        <p class="footer-desc">Hoa tươi cao cấp, giao tận tay với tình yêu.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-title">Danh Mục</h4>
+        <ul class="footer-links">
+          <li><a href="products.html">Tất cả hoa</a></li>
+          <li><a href="products.html">Hoa hồng</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-title">Hỗ Trợ</h4>
+        <ul class="footer-links">
+          <li><a href="#">Hướng dẫn đặt hàng</a></li>
+          <li><a href="#">Chính sách đổi trả</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-title">Liên Hệ</h4>
+        <div class="footer-contact">
+          <div class="footer-contact-item"><i class="fas fa-phone"></i><span>0909 888 999</span></div>
+          <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>hello@fleur.vn</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Fleur. Tất cả quyền được bảo lưu.</span>
+      <span>🌸 Made with love in Vietnam</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/cart.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Render recommended products
+    const grid = document.getElementById('recommendedGrid');
+    const sample = PRODUCTS.slice(0, 4);
+    grid.innerHTML = sample.map(p => `
+      <article class="product-card" data-aos>
+        <div class="product-img-wrap">
+          <div class="product-img-inner" style="width:100%;height:100%;position:relative;overflow:hidden;">
+            ${renderProductImg(p.images[0], p.name)}
+          </div>
+          <div class="product-quick">
+            <a href="product-detail.html?id=${p.id}" class="btn btn-ghost" style="flex:1;justify-content:center;font-size:0.82rem;padding:10px;"><i class="far fa-eye"></i> Xem</a>
+            <button class="btn btn-primary" style="flex:1;justify-content:center;font-size:0.82rem;padding:10px;" onclick="addToCart(${p.id})"><i class="fas fa-shopping-bag"></i> Thêm</button>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-cat">${p.category}</div>
+          <h3 class="product-name"><a href="product-detail.html?id=${p.id}">${p.name}</a></h3>
+          <div class="stars">${renderStars(p.rating)}<span>(${p.reviews})</span></div>
+          <div class="product-footer">
+            <span class="product-price">${formatPrice(p.price)}</span>
+            <button class="add-cart-btn" onclick="addToCart(${p.id})"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </article>
+    `).join('');
+    initAOS();
+  });
+</script>
+</body>
+</html>

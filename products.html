@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tất Cả Hoa Tươi — Fleur</title>
+    <meta
+      name="description"
+      content="Khám phá hơn 200 loại hoa tươi cao cấp tại Fleur. Lọc theo loại, dịp, giá cả và sắp xếp theo nhu cầu."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <div class="toast" id="toast">
+      <i class="fas fa-check-circle"></i>
+      <span class="toast-msg">Thành công!</span>
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header scrolled" id="siteHeader">
+      <div class="container">
+        <div class="header-inner">
+          <a href="index.html" class="logo">
+            <div class="logo-mark">🌸</div>
+            <span class="logo-text">Fl<span>eu</span>r</span>
+          </a>
+          <nav class="main-nav">
+            <a href="index.html" class="nav-link">Trang chủ</a>
+            <a href="products.html" class="nav-link active">Hoa tươi</a>
+            <a href="products.html?q=best" class="nav-link">Best Seller</a>
+            <a href="products.html" class="nav-link">Dịp đặc biệt</a>
+            <a href="about.html" class="nav-link">Về chúng tôi</a>
+          </nav>
+          <div class="header-actions">
+            <form class="search-wrap" onsubmit="doSearch(event)">
+              <i class="fas fa-search"></i>
+              <input
+                type="text"
+                id="headerSearch"
+                placeholder="Tìm hoa..."
+                autocomplete="off"
+              />
+            </form>
+            <a href="cart.html" class="cart-btn"
+              ><i class="fas fa-shopping-bag"></i
+              ><span class="cart-count">0</span></a
+            >
+            <button class="hamburger" id="hamburger">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="index.html">🏠 Trang chủ</a>
+      <a href="products.html">🌸 Hoa tươi</a>
+      <a href="about.html">💛 Về chúng tôi</a>
+      <a href="cart.html">🛒 Giỏ hàng</a>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <div class="container page-header-inner">
+        <div class="breadcrumb">
+          <a href="index.html">Trang chủ</a>
+          <i class="fas fa-chevron-right"></i>
+          <span>Hoa tươi</span>
+        </div>
+        <h1 class="section-title">Tất Cả Hoa Tươi</h1>
+        <p class="section-sub section-sub-centered">
+          Khám phá bộ sưu tập hoa tươi cao cấp của chúng tôi
+        </p>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <section class="section-cart">
+      <div class="container">
+        <div class="products-layout">
+          <!-- FILTER SIDEBAR -->
+          <aside class="filter-sidebar">
+            <div class="filter-card">
+              <div class="filter-search-row">
+                <i class="fas fa-search filter-chevron"></i>
+                <input
+                  type="text"
+                  id="productSearch"
+                  placeholder="Tìm hoa..."
+                  class="filter-search-input"
+                />
+              </div>
+            </div>
+
+            <div class="filter-card">
+              <div class="filter-title">
+                Loại Hoa
+                <i class="fas fa-chevron-down filter-chevron"></i>
+              </div>
+              <div class="filter-group">
+                <label class="filter-option"
+                  ><input
+                    type="checkbox"
+                    data-filter="category"
+                    value="Roses"
+                  />
+                  Hoa Hồng</label
+                >
+                <label class="filter-option"
+                  ><input
+                    type="checkbox"
+                    data-filter="category"
+                    value="Tulips"
+                  />
+                  Tulip</label
+                >
+                <label class="filter-option"
+                  ><input
+                    type="checkbox"
+                    data-filter="category"
+                    value="Lavender"
+                  />
+                  Oải Hương</label
+                >
+                <label class="filter-option"
+                  ><input
+                    type="checkbox"
+                    data-filter="category"
+                    value="Sunflowers"
+                  />
+                  Hướng Dương</label
+                >
+                <label class="filter-option"
+                  ><input
+                    type="checkbox"
+                    data-filter="category"
+                    value="Lilies"
+                  />
+                  Hoa Loa Kèn</label
+                >
+                <label class="filter-option"
+                  ><input
+                    type="checkbox"
+                    data-filter="category"
+                    value="Orchids"
+                  />
+                  Hoa Lan</label
+                >
+                <label class="filter-option"
+                  ><input
+                    type="checkbox"
+                    data-filter="category"
+                    value="Peonies"
+                  />
+                  Mẫu Đơn</label
+                >
+                <label class="filter-option"
+                  ><input
+                    type="checkbox"
+                    data-filter="category"
+                    value="Mixed"
+                  />
+                  Hỗn Hợp</label
+                >
+              </div>
+            </div>
+
+            <div class="filter-card">
+              <div class="filter-title">Dịp Tặng</div>
+              <div class="filter-group">
+                <label class="filter-option"
+                  ><input
+                    type="checkbox"
+                    data-filter="occasion"
+                    value="Birthday"
+                  />
+                  Sinh Nhật</label
+                >
+                <label class="filter-option"
+                  ><input
+                    type="checkbox"
+                    data-filter="occasion"
+                    value="Wedding"
+                  />
+                  Đám Cưới</label
+                >
+                <label class="filter-option"
+                  ><input type="checkbox" data-filter="occasion" value="Love" />
+                  Tình Yêu</label
+                >
+                <label class="filter-option"
+                  ><input
+                    type="checkbox"
+                    data-filter="occasion"
+                    value="Friendship"
+                  />
+                  Bạn Bè</label
+                >
+                <label class="filter-option"
+                  ><input
+                    type="checkbox"
+                    data-filter="occasion"
+                    value="Anniversary"
+                  />
+                  Kỷ Niệm</label
+                >
+                <label class="filter-option"
+                  ><input
+                    type="checkbox"
+                    data-filter="occasion"
+                    value="Special"
+                  />
+                  Đặc Biệt</label
+                >
+              </div>
+            </div>
+
+            <div class="filter-card">
+              <div class="filter-title">Khoảng Giá</div>
+              <div class="price-range-wrap">
+                <input
+                  type="range"
+                  id="priceRange"
+                  min="0"
+                  max="1200000"
+                  step="50000"
+                  value="1200000"
+                />
+                <div class="price-labels">
+                  <span>0đ</span>
+                  <span id="priceVal">1,200,000đ</span>
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="btn btn-outline"
+              id="resetFilters"
+              style="width: 100%; justify-content: center"
+            >
+              <i class="fas fa-times"></i> Xóa bộ lọc
+            </button>
+          </aside>
+
+          <!-- PRODUCT GRID -->
+          <div>
+            <div class="sort-bar">
+              <span class="sort-count"
+                ><span id="productCount">12</span> sản phẩm</span
+              >
+              <select class="sort-select" id="sortSelect">
+                <option value="default">Mặc định</option>
+                <option value="price-asc">Giá tăng dần</option>
+                <option value="price-desc">Giá giảm dần</option>
+                <option value="rating">Đánh giá cao nhất</option>
+                <option value="popular">Phổ biến nhất</option>
+              </select>
+            </div>
+            <div class="products-grid" id="productsGrid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+      <div class="container newsletter-inner">
+        <h2>Nhận Ưu Đãi Đặc Biệt 🌸</h2>
+        <p>Đăng ký ngay để nhận voucher 15% cho đơn hàng đầu tiên.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Nhập email của bạn..." />
+          <button class="btn" onclick="showToast('🎉 Đăng ký thành công!')">
+            Đăng ký
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-logo logo">
+              <div class="logo-mark">🌸</div>
+              <span class="logo-text">Fl<span>eu</span>r</span>
+            </div>
+            <p class="footer-desc">
+              Chúng tôi mang đến những bó hoa tươi đẹp nhất, giao tận tay với
+              tình yêu và sự tận tâm.
+            </p>
+            <div class="footer-socials">
+              <a href="#" class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-title">Danh Mục</h4>
+            <ul class="footer-links">
+              <li><a href="#">Hoa hồng</a></li>
+              <li><a href="#">Hoa tulip</a></li>
+              <li><a href="#">Hoa lan</a></li>
+              <li><a href="#">Hoa hỗn hợp</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-title">Hỗ Trợ</h4>
+            <ul class="footer-links">
+              <li><a href="#">Hướng dẫn đặt hàng</a></li>
+              <li><a href="#">Chính sách giao hàng</a></li>
+              <li><a href="#">Đổi trả & hoàn tiền</a></li>
+              <li><a href="about.html">Về chúng tôi</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="footer-title">Liên Hệ</h4>
+            <div class="footer-contact">
+              <div class="footer-contact-item">
+                <i class="fas fa-phone"></i><span>0909 888 999</span>
+              </div>
+              <div class="footer-contact-item">
+                <i class="fas fa-envelope"></i><span>hello@fleur.vn</span>
+              </div>
+              <div class="footer-contact-item">
+                <i class="fas fa-clock"></i><span>7:00 - 21:00 mỗi ngày</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2024 Fleur. Tất cả quyền được bảo lưu.</span>
+          <span>🌸 Made with love in Vietnam</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/products.js"></script>
+    <script>
+      function doSearch(e) {
+        e.preventDefault();
+        const q = document.getElementById("headerSearch").value.trim();
+        const si = document.getElementById("productSearch");
+        if (q && si) {
+          si.value = q;
+          si.dispatchEvent(new Event("input"));
+        }
+      }
+    </script>
+  </body>
+</html>
